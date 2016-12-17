@@ -1,0 +1,34 @@
+<ion-view view-title="Find Events">
+  <ion-content>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit" ng-click="start()">{{startString}}</button>
+        </label>
+        <label>
+         <button class="button button-block button-positive" type="submit" ng-click="finish()">{{endString}}</button>
+         </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit" ng-click="search()">Search</button>
+        </label>
+        <div ng-if="showresults">
+			<div ng-if="noevents">
+				<p>There are no events between the dates you chose.</p>
+			</div>
+        	<div ng-if="!noevents">
+				<h4>{{title}}</h4>
+				<p>Address: {{address}}</p>
+				<p>City: {{city}}</p>
+				<p>On: {{date}}</p>
+				<p>Showing event {{curevent+1}} of {{maxevents+1}}</p>
+					<div id="ctrlbar">
+						<span id="leftside">
+							<a href="" ng-show="curevent>0" ng-click="showevent(curevent-1)" on-swipe-left="curevent(-1)">Previous Result</a>
+						</span>
+
+						<span id="rightside">
+							<a href="" ng-show="curevent<maxevents" ng-click="showevent(curevent+1)" on-swipe-right="showevent(curevent+1)">Next Result</a>
+						</span>
+      			 	</div>
+        		</div>
+        </div>
+  </ion-content>
+</ion-view>

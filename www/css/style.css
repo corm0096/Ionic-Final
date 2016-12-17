@@ -1,0 +1,11 @@
+/* Empty. Add your own CSS if you like */
+#rightside
+{
+	text-align: right;
+	float:right;
+}
+
+#leftside
+{
+	text-align: left;
+}
